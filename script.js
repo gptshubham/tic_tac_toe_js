@@ -24,7 +24,15 @@ function checkWinner() {
   return 0;
 }
 
+const penguin = document.querySelector('#penguin');
+const eggplant = document.querySelector('#eggplant');
+const container0 = document.querySelector('.container0');
+const container2 = document.querySelector('.container2');
+
 let turn = 'O';
+
+penguin.classList.add('active');
+
 let total_turns = 0;
 
 const playTicTacToe = (e) => {
@@ -38,19 +46,23 @@ const playTicTacToe = (e) => {
       board_array[element.id] = 'O';
       // console.log(checkWinner());
       if (checkWinner()) {
-        document.querySelector('#winningMessage').innerHTML = 'Winner is O';
+        document.querySelector('#winningMessage').innerHTML = 'Penguin Won';
+        container0.classList.add('winner');
         boxContainer.removeEventListener('click', playTicTacToe);
       }
       turn = 'X';
+      active_player();
     } else {
       element.innerHTML = 'X';
       board_array[element.id] = 'X';
       // console.log(checkWinner());
       if (checkWinner()) {
-        document.querySelector('#winningMessage').innerHTML = 'Winner is X';
+        document.querySelector('#winningMessage').innerHTML = 'Eggplant Won';
+        container2.classList.add('winner');
         boxContainer.removeEventListener('click', playTicTacToe);
       }
       turn = 'O';
+      active_player();
     }
     if (total_turns === 9 && !checkWinner()) {
       document.querySelector('#winningMessage').innerHTML = `It's a Tie`;
@@ -75,4 +87,17 @@ restartButton.addEventListener('click', () => {
   turn = 'O';
   boxContainer.addEventListener('click', playTicTacToe);
   document.querySelector('#winningMessage').innerHTML = '';
+  container0.classList.remove('winner');
+  container2.classList.remove('winner');
+  active_player();
 });
+
+const active_player = () => {
+  if (turn === 'O') {
+    penguin.classList.add('active');
+    eggplant.classList.remove('active');
+  } else if (turn === 'X') {
+    eggplant.classList.add('active');
+    penguin.classList.remove('active');
+  }
+};

@@ -21,21 +21,21 @@ body {
 }
 
 .container1 {
-  padding: 3rem;
+  padding: 2rem;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
-  box-shadow: 0 10 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .box-container {
+  width: 100%;
+  max-width: 400px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
-  max-width: 400px;
-  width: 100%;
 }
 
 .box {
@@ -48,8 +48,8 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  font-size: 5rem;
+  transition: all 0.2s ease-in;
+  font-size: 4rem;
   font-weight: bold;
 }
 
@@ -75,8 +75,8 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
-  margin-bottom: 3rem;
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
   color: #2d3436;
   font-weight: 700;
 }
@@ -111,7 +111,7 @@ img {
 }
 
 img:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 .player {
@@ -124,9 +124,8 @@ img:hover {
   box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
 }
 
-.player.active {
-  background: linear-gradient(45deg, #6c5ce7, #a367dc);
-  transform: scale(1.05);
+.active {
+  transform: scale(1.25);
 }
 
 @keyframes winner {
@@ -134,7 +133,7 @@ img:hover {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
   100% {
     transform: scale(1);
@@ -143,8 +142,14 @@ img:hover {
 
 .winner {
   animation: winner 0.5s ease infinite;
-  border-color: #00b894;
-  background-color: #e6fff8;
+}
+
+.winning-message {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  height: 2rem;
+  transition: opacity 0.3s ease;
 }
 
 @media (max-width: 1024px) {
@@ -177,5 +182,15 @@ img:hover {
 
   .box {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .box-container {
+    gap: 10px;
+  }
+
+  .box {
+    font-size: 1.5rem;
   }
 }
