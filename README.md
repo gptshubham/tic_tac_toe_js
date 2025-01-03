@@ -14,7 +14,7 @@ A visually appealing and interactive web-based Tic Tac Toe game for two players,
 
 ## Demo
 
-[Click here to view the demo](#) _(https://gptshubham.github.io/tic_tac_toe_js/)_
+[Click here to view the demo](https://gptshubham.github.io/tic_tac_toe_js/)
 
 ## Technologies Used
 
@@ -53,14 +53,13 @@ tic-tac-toe/
 
 ## Screenshots
 
-_(Include screenshots of the game interface.)_
+![Tic Tac Toe Preview](./project_image/tic_tac_toe.png)
 
 ## Future Improvements
 
 - Add an AI opponent for single-player mode.
 - Include a scoring system to track wins and ties.
-- Enhance accessibility for visually impaired players.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) License.
